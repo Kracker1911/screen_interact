@@ -1,0 +1,93 @@
+.home-slider {
+  position: relative;
+  z-index: 1;
+  height: calc(100vh - 50px);
+  width: 100vw;
+  font-family: Roboto, sans-serif;
+  font-weight: 300;
+  background: #fff;
+  cursor: pointer;
+}
+.home-slider .slider--item,
+.home-slider .slider--image {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.home-slider .slider--text {
+  position: absolute;
+  z-index: 100;
+  left: -15%;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: #343333;
+  font-size: 5vw;
+  opacity: 0;
+  -webkit-transform: translate3d(0, -50%, 0);
+          transform: translate3d(0, -50%, 0);
+  -webkit-transition: all 0.5s cubic-bezier(0.65, 0.08, 0.24, 0.97) 0.6s;
+  transition: all 0.5s cubic-bezier(0.65, 0.08, 0.24, 0.97) 0.6s;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.home-slider .slider--text strong {
+  font-weight: bold;
+}
+.home-slider .slider--item.next {
+  z-index: 5;
+}
+.home-slider .slider--item.active {
+  z-index: 10;
+}
+.home-slider .slider--item.active .slider--text {
+  opacity: 1;
+  -webkit-transform: translate3d(0, -50%, 0);
+          transform: translate3d(0, -50%, 0);
+}
+.home-slider .slider--dots {
+  position: absolute;
+  z-index: 1;
+  bottom: -40px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+}
+.home-slider .slider--dots .slider--dot {
+  position: relative;
+  z-index: 1;
+  width: 30px;
+  height: 30px;
+  margin: 0 5px;
+  cursor: pointer;
+  font-size: 0;
+  background: none;
+  border: none;
+  outline: none;
+}
+.home-slider .slider--dots .slider--dot:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 9px;
+  height: 9px;
+  border-radius: 9px;
+  background: #cccaca;
+  -webkit-transition: background .2s ease-in-out;
+  transition: background .2s ease-in-out;
+}
+.home-slider .slider--dots .slider--dot:hover:before {
+  background: #616060;
+}
+.home-slider .slider--dots .slider--dot.active:before {
+  background: #343333;
+}
